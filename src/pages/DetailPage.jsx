@@ -122,6 +122,55 @@ function DetailPage() {
 
   const totalVotes = (post.votes_a || 0) + (post.votes_b || 0);
 
+  const handleShare = async (platform) => {
+    const url = window.location.href;
+    const text = `${post.title} - 누구 편을 들어줄래?`;
+
+    switch (platform) {
+      case 'copy':
+        try {
+          await navigator.clipboard.writeText(url);
+          alert('링크가 복사되었습니다!');
+        } catch {
+          alert('링크 복사에 실패했습니다.');
+        }
+        break;
+      case 'twitter':
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+          '_blank'
+        );
+        break;
+      case 'kakao':
+        if (window.Kakao?.Share) {
+          window.Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+              title: post.title,
+              description: `${post.side_a_label} vs ${post.side_b_label}`,
+              imageUrl: 'https://via.placeholder.com/300x200',
+              link: { mobileWebUrl: url, webUrl: url },
+            },
+            buttons: [
+              { title: '투표하기', link: { mobileWebUrl: url, webUrl: url } },
+            ],
+          });
+        } else {
+          // 카카오 SDK 없으면 기본 공유
+          window.open(
+            `https://story.kakao.com/share?url=${encodeURIComponent(url)}`,
+            '_blank'
+          );
+        }
+        break;
+      case 'native':
+        if (navigator.share) {
+          navigator.share({ title: post.title, text, url });
+        }
+        break;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 py-8">
@@ -142,10 +191,44 @@ function DetailPage() {
             </p>
           </div>
 
-          <div className="mt-6 pt-6 border-t border-gray-200">
+          <div className="mt-6 pt-6 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <p className="text-gray-500 text-sm">
               총 {totalVotes.toLocaleString()}명이 투표했습니다
             </p>
+
+            {/* 공유 버튼 */}
+            <div className="flex gap-2">
+              <button
+                onClick={() => handleShare('copy')}
+                className="p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                title="링크 복사"
+              >
+                🔗
+              </button>
+              <button
+                onClick={() => handleShare('twitter')}
+                className="p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                title="트위터 공유"
+              >
+                𝕏
+              </button>
+              <button
+                onClick={() => handleShare('kakao')}
+                className="p-2 bg-yellow-300 hover:bg-yellow-400 rounded-lg transition-colors"
+                title="카카오톡 공유"
+              >
+                💬
+              </button>
+              {navigator.share && (
+                <button
+                  onClick={() => handleShare('native')}
+                  className="p-2 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors"
+                  title="공유하기"
+                >
+                  📤
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
