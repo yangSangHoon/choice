@@ -4,32 +4,32 @@ function VoteResult({ sideALabel, sideBLabel, votesA, votesB }) {
   const percentageB = total > 0 ? Math.round((votesB / total) * 100) : 50;
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-      <h2 className="text-xl font-bold text-center mb-6 text-gray-900">
+    <div className="bg-white rounded-lg shadow p-5">
+      <p className="text-sm text-center mb-4 text-gray-500">
         투표 결과
-      </h2>
+      </p>
 
       {/* Side A */}
-      <div className="mb-6">
-        <div className="flex justify-between items-center mb-2">
-          <span className="font-bold text-lg text-blue-600">{sideALabel}</span>
-          <span className="font-bold text-lg text-blue-600">{percentageA}%</span>
+      <div className="mb-4">
+        <div className="flex justify-between items-center mb-1">
+          <span className="font-medium text-sm text-blue-700">{sideALabel}</span>
+          <span className="font-medium text-sm text-blue-700">{percentageA}%</span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-8 overflow-hidden">
+        <div className="w-full bg-blue-50 rounded-full h-6 overflow-hidden border border-blue-200">
           <div
-            className="bg-gradient-to-r from-blue-500 to-blue-600 h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-3"
+            className="bg-blue-200 h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-2"
             style={{ width: `${percentageA}%` }}
           >
-            {percentageA > 15 && (
-              <span className="text-white text-sm font-medium">
+            {percentageA > 20 && (
+              <span className="text-blue-700 text-xs font-medium">
                 {votesA.toLocaleString()}명
               </span>
             )}
           </div>
         </div>
-        {percentageA <= 15 && (
+        {percentageA <= 20 && (
           <div className="text-right mt-1">
-            <span className="text-blue-600 text-sm font-medium">
+            <span className="text-blue-600 text-xs font-medium">
               {votesA.toLocaleString()}명
             </span>
           </div>
@@ -37,38 +37,35 @@ function VoteResult({ sideALabel, sideBLabel, votesA, votesB }) {
       </div>
 
       {/* Side B */}
-      <div className="mb-6">
-        <div className="flex justify-between items-center mb-2">
-          <span className="font-bold text-lg text-red-600">{sideBLabel}</span>
-          <span className="font-bold text-lg text-red-600">{percentageB}%</span>
+      <div className="mb-4">
+        <div className="flex justify-between items-center mb-1">
+          <span className="font-medium text-sm text-red-700">{sideBLabel}</span>
+          <span className="font-medium text-sm text-red-700">{percentageB}%</span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-8 overflow-hidden">
+        <div className="w-full bg-red-50 rounded-full h-6 overflow-hidden border border-red-200">
           <div
-            className="bg-gradient-to-r from-red-500 to-red-600 h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-3"
+            className="bg-red-200 h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-2"
             style={{ width: `${percentageB}%` }}
           >
-            {percentageB > 15 && (
-              <span className="text-white text-sm font-medium">
+            {percentageB > 20 && (
+              <span className="text-red-700 text-xs font-medium">
                 {votesB.toLocaleString()}명
               </span>
             )}
           </div>
         </div>
-        {percentageB <= 15 && (
+        {percentageB <= 20 && (
           <div className="text-right mt-1">
-            <span className="text-red-600 text-sm font-medium">
+            <span className="text-red-600 text-xs font-medium">
               {votesB.toLocaleString()}명
             </span>
           </div>
         )}
       </div>
 
-      <div className="text-center pt-4 border-t border-gray-200">
-        <p className="text-gray-600">
-          투표해주셔서 감사합니다! 🎉
-        </p>
-        <p className="text-gray-500 text-sm mt-1">
-          총 {total.toLocaleString()}명이 참여했습니다
+      <div className="text-center pt-3 border-t border-gray-100">
+        <p className="text-gray-400 text-xs">
+          총 {total.toLocaleString()}명 참여
         </p>
       </div>
     </div>

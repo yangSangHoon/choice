@@ -144,7 +144,7 @@ function MainPage() {
             </p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="flex flex-wrap gap-4">
             {filteredPosts.map(post => (
               <PostCard key={post.id} post={post} />
             ))}

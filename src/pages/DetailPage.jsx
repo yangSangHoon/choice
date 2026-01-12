@@ -173,62 +173,66 @@ function DetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4 py-8">
+      <div className="max-w-2xl mx-auto px-4 py-6">
+        {/* 뒤로가기 */}
+        <button
+          onClick={() => navigate('/')}
+          className="text-gray-500 hover:text-gray-700 text-sm mb-4 flex items-center gap-1"
+        >
+          ← 목록
+        </button>
+
         {/* 게시글 헤더 */}
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-6">
-          <div className="flex items-start justify-between mb-4">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 flex-1 pr-4">
-              {post.title}
-            </h1>
-            <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full whitespace-nowrap">
+        <div className="bg-white rounded-lg shadow p-5 mb-4 border-l-4 border-l-blue-400">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="px-2 py-0.5 bg-blue-50 text-blue-600 text-xs font-medium rounded-full">
               {CATEGORY_LABELS[post.category] || post.category}
+            </span>
+            <span className="text-xs text-gray-400">
+              {totalVotes}명 투표
             </span>
           </div>
 
-          <div className="prose max-w-none">
-            <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-wrap">
-              {post.story}
-            </p>
+          <h1 className="text-lg font-bold text-gray-900 mb-4">
+            {post.title}
+          </h1>
+
+          <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap bg-gray-50 p-4 rounded-lg">
+            {post.story}
           </div>
 
-          <div className="mt-6 pt-6 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <p className="text-gray-500 text-sm">
-              총 {totalVotes.toLocaleString()}명이 투표했습니다
-            </p>
-
-            {/* 공유 버튼 */}
-            <div className="flex gap-2">
+          {/* 공유 버튼 */}
+          <div className="mt-4 pt-4 border-t border-gray-100 flex gap-2">
+            <button
+              onClick={() => handleShare('copy')}
+              className="p-1.5 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+              title="링크 복사"
+            >
+              🔗
+            </button>
+            <button
+              onClick={() => handleShare('twitter')}
+              className="p-1.5 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+              title="트위터 공유"
+            >
+              𝕏
+            </button>
+            <button
+              onClick={() => handleShare('kakao')}
+              className="p-1.5 text-xs bg-yellow-100 hover:bg-yellow-200 rounded transition-colors"
+              title="카카오톡 공유"
+            >
+              💬
+            </button>
+            {navigator.share && (
               <button
-                onClick={() => handleShare('copy')}
-                className="p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                title="링크 복사"
+                onClick={() => handleShare('native')}
+                className="p-1.5 text-xs bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                title="공유하기"
               >
-                🔗
+                📤
               </button>
-              <button
-                onClick={() => handleShare('twitter')}
-                className="p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                title="트위터 공유"
-              >
-                𝕏
-              </button>
-              <button
-                onClick={() => handleShare('kakao')}
-                className="p-2 bg-yellow-300 hover:bg-yellow-400 rounded-lg transition-colors"
-                title="카카오톡 공유"
-              >
-                💬
-              </button>
-              {navigator.share && (
-                <button
-                  onClick={() => handleShare('native')}
-                  className="p-2 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors"
-                  title="공유하기"
-                >
-                  📤
-                </button>
-              )}
-            </div>
+            )}
           </div>
         </div>
 
@@ -241,52 +245,32 @@ function DetailPage() {
             votesB={post.votes_b || 0}
           />
         ) : (
-          <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-            <h2 className="text-xl font-bold text-center mb-6 text-gray-900">
+          <div className="bg-white rounded-lg shadow p-5">
+            <p className="text-sm text-center mb-4 text-gray-500">
               누구의 편을 들어주시겠어요?
-            </h2>
+            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex gap-3">
               <button
                 onClick={() => handleVote('a')}
-                className="group relative overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 active:scale-95 shadow-lg"
+                className="flex-1 bg-blue-100 hover:bg-blue-200 text-blue-700 py-3 px-4 rounded-lg transition-colors text-sm font-medium border border-blue-200"
               >
-                <div className="text-xl md:text-2xl font-bold mb-2">
-                  {post.side_a_label}
-                </div>
-                <div className="text-blue-100 text-sm">
-                  이쪽 편 들기
-                </div>
+                {post.side_a_label}
               </button>
 
               <button
                 onClick={() => handleVote('b')}
-                className="group relative overflow-hidden bg-gradient-to-br from-red-500 to-red-600 text-white p-6 rounded-xl hover:from-red-600 hover:to-red-700 transition-all transform hover:scale-105 active:scale-95 shadow-lg"
+                className="flex-1 bg-red-100 hover:bg-red-200 text-red-700 py-3 px-4 rounded-lg transition-colors text-sm font-medium border border-red-200"
               >
-                <div className="text-xl md:text-2xl font-bold mb-2">
-                  {post.side_b_label}
-                </div>
-                <div className="text-red-100 text-sm">
-                  이쪽 편 들기
-                </div>
+                {post.side_b_label}
               </button>
             </div>
 
-            <p className="text-center text-gray-500 text-sm mt-6">
+            <p className="text-center text-gray-400 text-xs mt-3">
               한 번만 투표할 수 있습니다
             </p>
           </div>
         )}
-
-        {/* 뒤로가기 버튼 */}
-        <div className="mt-6 text-center">
-          <button
-            onClick={() => navigate('/')}
-            className="text-blue-600 hover:text-blue-700 font-medium"
-          >
-            ← 목록으로 돌아가기
-          </button>
-        </div>
       </div>
 
       {/* 인구통계 모달 */}

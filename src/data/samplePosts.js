@@ -12,8 +12,8 @@ export const samplePosts = [
 전 그냥 친절한 거라고 생각했는데 친구들은 "연인 사이에서도 그건 아니다"라고 하네요. 남자친구도 별로 신경 안 쓰는 것 같은데... 제가 잘못한 건가요?`,
     side_a_label: '깻잎 떼준 사람',
     side_b_label: '깻잎 받은 사람',
-    votes_a: 1247,
-    votes_b: 2156
+    votes_a: 2,
+    votes_b: 3
   },
   {
     category: 'couple',
@@ -27,8 +27,8 @@ export const samplePosts = [
 남자친구는 "지금은 아직 결혼 전이고, 각자 경제적으로 독립적이어야 한다"는 입장이에요. 저는 이제 곧 결혼할 건데 너무 칼같다는 생각이 들어요. 어떻게 하는 게 맞을까요?`,
     side_a_label: '같이 내자는 여자친구',
     side_b_label: '각자 내자는 남자친구',
-    votes_a: 892,
-    votes_b: 1634
+    votes_a: 1,
+    votes_b: 4
   },
   {
     category: 'family',
@@ -44,8 +44,8 @@ export const samplePosts = [
 남편은 "내년에는 친정 가도 된다"고 하는데, 그럼 내년에도 또 시댁 가야 할 것 같아서 믿음이 안 가요.`,
     side_a_label: '친정 가고 싶은 아내',
     side_b_label: '시댁 가야 한다는 남편',
-    votes_a: 3421,
-    votes_b: 567
+    votes_a: 4,
+    votes_b: 1
   },
   {
     category: 'work',
@@ -61,8 +61,8 @@ export const samplePosts = [
 팀장님은 "회사 예산이 빠듯하다", "다른 사람들도 다 자비로 낸다"고 하시는데... 뭔가 억울한 기분이 듭니다.`,
     side_a_label: '택시비 처리 요청한 직원',
     side_b_label: '안 된다는 팀장',
-    votes_a: 2834,
-    votes_b: 421
+    votes_a: 3,
+    votes_b: 1
   },
   {
     category: 'friend',
@@ -78,8 +78,8 @@ export const samplePosts = [
 전 그냥 축의금 보내고 축하 메시지만 전하면 안 되나 싶은데... 제가 너무 몰인정한 걸까요? 친구는 진심으로 서운해하는 것 같아서 고민입니다.`,
     side_a_label: '안 가려는 나',
     side_b_label: '와달라는 친구',
-    votes_a: 1876,
-    votes_b: 1234
+    votes_a: 2,
+    votes_b: 2
   },
   {
     category: 'work',
@@ -95,8 +95,8 @@ export const samplePosts = [
 남편한테 부탁해도 되긴 하는데, 남편도 힘들어 하고... 제가 팀워크를 해치는 걸까요? 아니면 회사가 육아에 대한 이해가 부족한 걸까요?`,
     side_a_label: '회식 불참하는 워킹맘',
     side_b_label: '참석 요구하는 팀장',
-    votes_a: 3156,
-    votes_b: 543
+    votes_a: 5,
+    votes_b: 0
   },
   {
     category: 'couple',
@@ -112,8 +112,8 @@ export const samplePosts = [
 전 그냥 사생활을 존중받고 싶은 건데... 제가 이상한 걸까요? 연인 사이라도 핸드폰은 개인 영역 아닌가요?`,
     side_a_label: '안 알려주려는 여자친구',
     side_b_label: '알려달라는 남자친구',
-    votes_a: 2687,
-    votes_b: 891
+    votes_a: 3,
+    votes_b: 2
   },
   {
     category: 'family',
@@ -129,8 +129,8 @@ export const samplePosts = [
 전 제 아이 이름인데 제가 짓고 싶어요. 시어머니 말씀을 무시하는 것처럼 보일까 봐 걱정은 되지만... 이건 제 권리 아닌가요?`,
     side_a_label: '직접 짓고 싶은 부부',
     side_b_label: '작명소 가자는 시어머니',
-    votes_a: 3789,
-    votes_b: 421
+    votes_a: 4,
+    votes_b: 0
   },
   {
     category: 'friend',
@@ -146,8 +146,8 @@ export const samplePosts = [
 100만원이 적은 돈은 아닌데... 친구 관계가 깨질까 봐 걱정되지만, 계속 이러면 제가 바보 같아요. 어떻게 해야 할까요?`,
     side_a_label: '돈 갚으라는 나',
     side_b_label: '안 갚는 친구',
-    votes_a: 4123,
-    votes_b: 187
+    votes_a: 5,
+    votes_b: 0
   },
   {
     category: 'work',
@@ -163,8 +163,8 @@ export const samplePosts = [
 다른 회사는 멘토링 시스템이 제대로 있다고 들었는데, 우리 회사는 그냥 "알아서 가르쳐"라고만 하니까... 제가 이기적인 걸까요?`,
     side_a_label: '거절하고 싶은 3년차',
     side_b_label: '맡기려는 팀장',
-    votes_a: 2341,
-    votes_b: 1456
+    votes_a: 2,
+    votes_b: 3
   },
   {
     category: 'couple',
@@ -180,8 +180,8 @@ export const samplePosts = [
 전 그냥 가끔이라도 커피 한 잔 정도는 사줬으면 하는 건데... 제가 너무 쪼잔한 걸까요?`,
     side_a_label: '내는 게 부담스러운 여자친구',
     side_b_label: '돈 없는 남자친구',
-    votes_a: 2987,
-    votes_b: 623
+    votes_a: 4,
+    votes_b: 1
   },
   {
     category: 'family',
@@ -199,8 +199,8 @@ export const samplePosts = [
 전 전통을 존중하고 싶지만... 이건 너무 불공평한 것 같아요.`,
     side_a_label: '혼자 준비하는 며느리',
     side_b_label: '전통이라는 시댁',
-    votes_a: 3567,
-    votes_b: 432
+    votes_a: 3,
+    votes_b: 1
   },
   {
     category: 'friend',
@@ -218,8 +218,8 @@ export const samplePosts = [
 어떻게 해야 할까요?`,
     side_a_label: '투자 거절하고 싶은 나',
     side_b_label: '투자 요청하는 친구',
-    votes_a: 3421,
-    votes_b: 578
+    votes_a: 4,
+    votes_b: 1
   },
   {
     category: 'work',
@@ -235,8 +235,8 @@ export const samplePosts = [
 노동법상으로는 연차는 근로자의 권리라고 알고 있는데... 회사에서 이렇게 거부할 수 있는 건가요? 아니면 제가 팀워크를 생각해서 양보해야 하는 걸까요?`,
     side_a_label: '연차 쓰고 싶은 직원',
     side_b_label: '안 된다는 팀장',
-    votes_a: 3876,
-    votes_b: 234
+    votes_a: 5,
+    votes_b: 0
   },
   {
     category: 'couple',
@@ -252,8 +252,8 @@ export const samplePosts = [
 공평하게 하자는 건 좋은데... 제 용돈까지 늘어나는 건 부담스러워요.`,
     side_a_label: '각자 드리자는 아내',
     side_b_label: '같이 드리자는 남편',
-    votes_a: 1567,
-    votes_b: 2234
+    votes_a: 2,
+    votes_b: 3
   },
   {
     category: 'etc',
@@ -271,8 +271,8 @@ export const samplePosts = [
 제가 잘못한 건가요? 30분 넘게 기구를 안 쓰고 있으면서... 어떻게 대처하는 게 맞았을까요?`,
     side_a_label: '트레이너한테 말한 나',
     side_b_label: '화낸 그 남성',
-    votes_a: 3654,
-    votes_b: 346
+    votes_a: 4,
+    votes_b: 1
   },
   {
     category: 'etc',
@@ -290,8 +290,8 @@ export const samplePosts = [
 카페 직원한테 이야기했더니 "자리는 선착순이라 저희가 관여할 수 없다"고 하더라고요. 제가 어떻게 해야 했을까요?`,
     side_a_label: '자리 맡아둔 나',
     side_b_label: '앉아버린 그 사람',
-    votes_a: 2341,
-    votes_b: 1659
+    votes_a: 2,
+    votes_b: 2
   },
   {
     category: 'family',
@@ -309,8 +309,8 @@ export const samplePosts = [
 돈을 더 많이 번다고 육아를 안 해도 되는 건가요? 저는 너무 지쳐요...`,
     side_a_label: '도와달라는 아내',
     side_b_label: '안 하려는 남편',
-    votes_a: 4234,
-    votes_b: 123
+    votes_a: 5,
+    votes_b: 0
   },
   {
     category: 'friend',
@@ -326,8 +326,8 @@ export const samplePosts = [
 다시 들어가 달라고 해서 난감해요. 알림도 시끄럽고, 제가 관심도 없는 내용인데... 친구 체면 때문에 억지로 있어야 할까요?`,
     side_a_label: '나간 나',
     side_b_label: '다시 들어오라는 친구',
-    votes_a: 2876,
-    votes_b: 1124
+    votes_a: 3,
+    votes_b: 1
   },
   {
     category: 'etc',
@@ -345,7 +345,7 @@ export const samplePosts = [
 비행기 좌석 젖히는 건 승객의 권리 아닌가요? 아니면 뒷사람을 배려해서 안 젖혀야 하는 걸까요?`,
     side_a_label: '좌석 젖힌 나',
     side_b_label: '올려달라는 뒷사람',
-    votes_a: 1987,
-    votes_b: 2013
+    votes_a: 2,
+    votes_b: 3
   }
 ];
